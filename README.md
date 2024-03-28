@@ -7,10 +7,6 @@ Diese Einführung ist Teil des [Pre-Work-Pakets](../../../collection-it-prwrkpck
 2. [Grundlagen zur Verwendung von Git](#grundlagen-zur-verwendung-von-git)
 3. [Weiterführende Quellen](#weiterführende-quellen)
 4. [GitHub und GitLab als Entwicklungsplattformen](#github-und-gitlab-als-entwicklungsplattformen)
-5. [Umsetzung im Onboarding-Paket](#umsetzung-im-onboarding-paket)
-
-
-
 
 ## Was ist Git?
 Git ist das am weitesten verbreitete Versionskontrollsystem (VCS) der Welt und wurde 2005 von Linus Torvalds, dem Entwickler von Linux, als Open-Source-Projekt ins Leben gerufen.  
@@ -25,7 +21,6 @@ Bei Git handelt es sich dabei um ein verteiltes Versionskontrollsystem ("distrib
 - Arbeiten mit Versionen zum einfachen Nachvollziehen von Änderungen
 - Vereinfachtes Arbeiten mit anderen Entwicklern im gleichen Repository
 - Vereinfachtes Verständnis des Quellcodes durch Betrachtung der Historie
-
 
 
 ## Grundlagen zur Verwendung von Git
