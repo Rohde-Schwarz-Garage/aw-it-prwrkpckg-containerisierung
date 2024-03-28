@@ -1,12 +1,6 @@
 # Git - Versionskontrolle einfach erklärt
 
-```csharp
-if (readDocuments.Contains("Einleitungsdokument")) {
-    continue;
-} else {
-    return;
-}
-```
+Diese Einführung ist Teil des [Pre-Work-Pakets](../../../collection-it-prwrkpckg).
 
 ## Inhaltsverzeichnis
 1. [Was ist Git?](#was-ist-git)
@@ -19,11 +13,11 @@ if (readDocuments.Contains("Einleitungsdokument")) {
 
 
 ## Was ist Git?
-Git ist das am weitesten verbreitete Versionskontrollsystem der Welt und wurde 2005 von Linus Torvalds, dem Entwickler von Linux, als Open-Source-Projekt ins Leben gerufen.  
+Git ist das am weitesten verbreitete Versionskontrollsystem (VCS) der Welt und wurde 2005 von Linus Torvalds, dem Entwickler von Linux, als Open-Source-Projekt ins Leben gerufen.  
 Versionskontrollsysteme dienen zum Verfolgen von Änderungen an Quelltexten. Es werden während der Bearbeitung Momentaufnahmen der Dateien erstellt und dauerhaft gespeichert, um bei Bedarf wieder verfügbar zu sein.  
 
 Somit wird die Praxis, eine Datei mehrmals mit unterschiedlichen Namen auf dem Rechner zu speichern, um verschiedene Zustände zu sichern, mit allen leider nur zu gut bekannten Tücken, wie etwa final.doc oder wirklichfinal.doc bis zu jetzabertatsächlichwirklichfinal.doc, obsolet.  
-Bei Git handelt es sich dabei um ein verteiltes Versionskontrollsystem (DVCS). Dies kennzeichnet sich dadurch, dass jede Arbeitskopie eines Repositorys (zentraler Projektordner) den vollständigen Verlauf aller Änderungen enthält.
+Bei Git handelt es sich dabei um ein verteiltes Versionskontrollsystem ("distributed" VCS / DVCS). Dies kennzeichnet sich dadurch, dass jede Arbeitskopie eines Repositorys (= zentraler Projektordner, dessen Inhalt im VCS erfasst wird) den vollständigen Verlauf aller Änderungen enthält.
 
 
 ### Vorteile einer Versionskontrolle
@@ -43,14 +37,16 @@ Auf Raspberry Pi OS ist Git bereits vorinstalliert.
 Eine weitere Möglichkeit ist es, alternative Git-Versionen von Drittanbietern zu installieren. Diese unterscheiden sich maßgeblich in ihrem GUI (Graphical User Interface). Eine Übersicht findet sich [hier](https://git-scm.com/downloads/guis).  
 Diese Anleitung bezieht sich jedoch auf die Arbeit mit der Befehlszeile und benötigt keine Drittanbieter-Version.
 
+Für alle Befehle, die mit Git zu tun haben, kannst du das Terminal (unter Linux) oder das Programm "Git Bash" (unter Windows) verwenden. Git Bash wird bei der Installation von Git wird bei Windows automatisch installiert ist eine Git-Befehlszeile für Windows, die das Verhalten von Linux-Terminals emuliert. Um sie zu öffnen, kannst du in Windows 11 den Dateiexplorer öffnen, mit Shift+Rechtsklick das Kontextmenü öffnen und auf "Git Bash Here" klicken.
 
 ### Git konfigurieren
-Bevor du Git verwendest, solltest du einige grundlegende Konfigurationseinstellungen vornehmen. Dazu gehören Name und E-Mail-Adresse, die in deinen Commit-Nachrichten verwendet werden. Es muss zuerst die Git-Befehlszeile geöffnet werden, indem das Programm Git-Bash ausgeführt wird.  
+Bevor du Git verwendest, solltest du einige grundlegende Konfigurationseinstellungen vornehmen. Dazu gehören Name und E-Mail-Adresse, die in deinen Commit-Nachrichten verwendet werden. 
+Nun kannst du die folgenden Befehle ausführen:
+
 ```
 git config --global user.name "Dein Name"
 git config --global user.email "Deine E-Mail"
 ```
-
 
 ### Ein Repository erstellen
 Zum Erstellen wird zunächst mittels 
@@ -61,13 +57,14 @@ in das gewünschte Verzeichnis zum Speichern gewechselt und mit
 ```
 git init
 ``` 
-ein Repository erstellt.  
+ein leeres Repository erstellt. 
+Achtung: `git init` erstellt keinen neuen Ordner, sondern wandelt den aktuellen Ordner in ein Repository um.
 
-Wenn das gewünschte Repository bereits existiert, wird mit 
+Wenn das gewünschte Repository bereits anderorts existiert, kann man mit 
 ```
 git clone <Web- oder Netzadresse zum Verzeichnis>
 ```
-eine lokale Arbeitskopie auf dem Rechner angelegt.
+eine lokale Arbeitskopie auf dem Rechner anlegen. 
 
 ![Ein Repository erstellen](rsc/Repository_anlegen.png)
 
@@ -92,7 +89,7 @@ Ein Punkt anstelle des Dateinamens fügt alle Änderungen im aktuellen Verzeichn
 
 
 ### Einen Commit erstellen
-Wenn du aktuelle Änderungen festhalten möchtest, verwende den `git commit`  Befehl. Dieser erstellt einen "Snapshot" der Änderungen, die später referenziert werden können.
+Wenn du aktuelle Änderungen festhalten möchtest, verwende den `git commit`  Befehl. Dieser erstellt einen "Commit" (Snapshot) der mit `git add` hinzugefügten Änderungen, die später referenziert werden können.
 ```
 git commit -m "Eine aussagekräftige Commit-Nachricht"
 ```
@@ -124,7 +121,7 @@ Hierbei steht origin für das Remote-Repository und main für den Branch, zu dem
 
 
 ### Änderungen abrufen
-Wurden auf deinem Arbeitsbranch auf dem Remote-Repository Änderungen durchgeführt, musst du zum Weiterarbeiten die Änderungen auf dein lokales Repository holen. Verwende hierfür den `git pull` Befehl.
+Wurden auf dem Remote-Repository Änderungen durchgeführt, die du auf deinem lokalen Branch noch nicht hast, musst du zum Weiterarbeiten die Änderungen auf dein lokales Repository holen. Verwende hierfür den `git pull` Befehl.
 ```
 git pull origin main
 ```
@@ -140,7 +137,7 @@ Um zur Dokumentation zu gelangen, klicke [hier](https://git-scm.com/docs).
 Das Cheat-Sheet ist eine übersichtliche Sammlung der wichtigsten Git-Befehle. Klicke [hier](https://training.github.com/downloads/de/github-git-cheat-sheet/), um es anzuzeigen.
 
 ### Interaktives Git-Tutorial
-Dieses Tutorial bietet dir die Möglichkeit mit Git-Bash herumzuprobieren und dir die Auswirkungen der Befehle grafisch anzeigen zu lassen. Klicke [hier](https://learngitbranching.js.org/?locale=de_DE), um das Tutorial aufzurufen.
+Dieses [Git-Tutorial](https://learngitbranching.js.org/?locale=de_DE) bietet dir die Möglichkeit mit Git herumzuprobieren und dir die Auswirkungen der Befehle grafisch anzeigen zu lassen.
 
 
 
@@ -161,14 +158,8 @@ Ein wichtiger Unterschied ist, dass Git primär ein Kommandozeilen-Tool ist - Gi
 Darüber hinaus bieten GitHub und GitLab Funktionen, die in Git nicht eingebaut sind, wie z.B. Pull Requests und Issues. Diese Funktionen erleichtern die Zusammenarbeit und Kommunikation zwischen Entwicklern.  
 Obwohl GitHub und GitLab auf Git basieren, sind sie nicht dasselbe. Sie sind Erweiterungen von Git, die darauf abzielen, die Zusammenarbeit und das Management von Softwareprojekten zu erleichtern.
 
-
-
-## Umsetzung im Onboarding-Paket
-Unser Onboarding-Paket ist auf GitHub gehostet. Um eine Arbeitskopie des Onboarding-Pakets auf deinem lokalen Rechner zu erstellen, kannst du der vorangehenden Anleitung folgen oder alternativ mit Visual Studio Code arbeiten.
-
-
 ### Visual Studio Code und Git
-Für eine benutzerfreundlichere Erfahrung empfehlen wir die Verwendung von Visual Studio Code (VS Code) mit der integrierten Versionskontrolle. Visual Studio Code ist ein beliebter Code-Editor von Microsoft, der eine Vielzahl von Funktionen bietet, darunter die Integration von Git.  
+Für eine benutzerfreundlichere Erfahrung empfehlen wir die Verwendung von Visual Studio Code (VS Code) mit der integrierten Versionskontrolle. Visual Studio Code ist ein beliebter Code-Editor von Microsoft, der eine Vielzahl von Funktionen bietet und mit Plugins erweitert werden kann - darunter die Integration von Git.
 
 Dies erleichtert die Verwendung von Git, indem VS Code eine grafische Benutzeroberfläche für Git-Befehle bietet. Somit kannst du viele Git-Operationen durchführen, ohne die Befehlszeile zu verwenden. Um weitergehende Information über die Verwendung von Git in VS Code zu erhalten, klicke [hier](https://code.visualstudio.com/docs/sourcecontrol/overview).
 
