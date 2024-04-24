@@ -61,7 +61,7 @@ git clone <Web- oder Netzadresse zum Verzeichnis>
 ```
 eine lokale Arbeitskopie auf dem Rechner anlegen. 
 
-![Ein Repository erstellen](rsc/Repository_anlegen.png)
+![Ein Repository erstellen](img/Repository_anlegen.png)
 
 ### Notiz vorab
 
@@ -145,10 +145,10 @@ Während Git ein Tool ist, das als lokale Instanz läuft und hilft, Code-Änderu
 Ein wichtiger Unterschied ist, dass Git primär ein Kommandozeilen-Tool ist - Git GUI hat nur eine rudimentäre grafische Benutzeroberfläche - , während GitHub und GitLab eine benutzerfreundliche Weboberfläche bieten. Dies macht sie zugänglicher für Menschen, die nicht mit der Kommandozeile vertraut sind.  
 
 #### GitHub Weboberfläche
-![GitHub Weboberfläche mit zahlreichen Zusatzfunktionen](rsc/GitHub_Weboberfläche.png)
+![GitHub Weboberfläche mit zahlreichen Zusatzfunktionen](img/GitHub_Weboberfläche.png)
 
 #### Git GUI Oberfläche
-![Git GUI Benutzeroberfläche im klassischen Aussehen](rsc/Git_Gui_Benutzeroberfläche.png)
+![Git GUI Benutzeroberfläche im klassischen Aussehen](img/Git_Gui_Benutzeroberfläche.png)
 
 Darüber hinaus bieten GitHub und GitLab Funktionen, die in Git nicht eingebaut sind, wie z.B. Pull Requests und Issues. Diese Funktionen erleichtern die Zusammenarbeit und Kommunikation zwischen Entwicklern.  
 Obwohl GitHub und GitLab auf Git basieren, sind sie nicht dasselbe. Sie sind Erweiterungen von Git, die darauf abzielen, die Zusammenarbeit und das Management von Softwareprojekten zu erleichtern.
